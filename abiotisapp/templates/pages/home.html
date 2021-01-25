@@ -1,0 +1,60 @@
+{% extends 'layout/app.html' %}
+
+{% load static %}
+
+{% block body %}
+<style>
+  .img-responsive {
+    
+    height: 200px;
+  }
+</style>
+<div id="content-wrapper">
+  <div class="text-center mb-3">
+    <img class="img-responsive" src="{%static 'images/home.jpg' %}" alt="Card image cap">
+  </div>
+  <div class="container" >
+    <div >
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+      
+      <div class="text-center ">
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/masam" class="btn btn-success btn-block">Masam/Salin</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/hasil_tinggi" class="btn btn-success btn-block">Hasil Tinggi</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/daun_tegak" class="btn btn-success btn-block">Daun Tegak</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/lown" class="btn btn-success btn-block">Low N</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/kekeringan" class="btn btn-success btn-block">Kekeringan</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/naungan" class="btn btn-success btn-block">Naungan</a>
+        </div>
+        <div class="mb-1">
+          <a type="button" href="abiotis_list/genangan" class="btn btn-success btn-block">Genangan</a>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p class="small">&copy;
+          <script>document.write(new Date().getFullYear())</script> abiotis.com
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}
+{% block javascript %}
+
+{% endblock %}

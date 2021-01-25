@@ -1,0 +1,38 @@
+{% extends 'layout/app.html' %}
+{% load static %}
+{% block body %}
+<style>
+    .img-responsive {
+        width: 80%;
+        height: auto;
+    }
+</style>
+<div id="content-wrapper">
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        <p class="small media-body mb-0 lh-125 border-gray">
+            <strong>Abiotis ID: {{abiotis.id}}</strong>
+            </br> Tanggal Laporan: {{abiotis.created_date}}
+            </br> Seleksi: {{abiotis.selection}}
+            </br> Asal: {{abiotis.origin}}
+            </br> Umur Jagung Jantan: {{abiotis.umur_jagung_jantan}}
+            </br> Umur Jagung Betina: {{abiotis.umur_jagung_betina}}
+            </br> Umur Panen: {{abiotis.umur_panen}}
+        </p>
+        
+        <div>
+            <a type="button" class="btn btn-success btn-block mt-1" href="/abiotis_edit/{{ abiotis.id }}">Edit</a>
+        </div>
+        <div>
+            <a type="button" class="btn btn-secondary btn-block mt-1" href="/abiotis_list/{{type}}">Kembali</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block javascript %}
+{% endblock %}
